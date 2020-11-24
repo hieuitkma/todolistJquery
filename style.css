@@ -1,0 +1,294 @@
+:root {
+    --violet-color: rgb(238, 130, 238);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nerko One', cursive;
+}
+
+html {
+    color: #333;
+    font-size: 62.5%;
+}
+
+.container {
+    background-color: #f1f1f1;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.form {
+    background-color: #fff;
+    width: 50%;
+    margin: 24px;
+    text-align: center;
+    align-self: center;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+}
+
+.form-header {
+    font-weight: 700;
+    font-size: 7.6rem;
+    color: var(--violet-color);
+    margin: 40px 0;
+}
+
+
+/* input and button */
+
+.form-group {
+    display: flex;
+    margin: 0 20px;
+}
+
+.form--input {
+    height: 50px;
+    width: 90%;
+    font-size: 1.8rem;
+    padding: 8px 16px;
+    border: 1px solid rgb(190, 190, 190);
+    border-radius: 3px 0 0 3px;
+    border-right: none;
+    outline: none;
+}
+
+.form--input:hover {
+    border-color: var(--violet-color);
+}
+
+.form--input:focus {
+    border-color: var(--violet-color);
+    box-shadow: 0 2px 9px 2px rgba(199, 4, 173, 0.1);
+}
+
+.btn {
+    width: 100px;
+    color: white;
+    background-color: var(--violet-color);
+    font-size: 1.8rem;
+    border: none;
+    border-radius: 0 3px 3px 0;
+    outline: none;
+}
+
+.btn--add {}
+
+.btn--edit {
+    display: none;
+}
+
+.form-content {
+    margin: 30px 0;
+}
+
+
+/* Todos */
+
+.todos {}
+
+.todos__title {
+    font-size: 2.6rem;
+}
+
+.todos--no-item {
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+.todos--no-item.hide {
+    display: none;
+}
+
+.todos__list {
+    list-style-type: none;
+}
+
+.todos__list--item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 24px;
+}
+
+.todos__list--item__content {
+    font-size: 2.2rem;
+}
+
+.todos__list--item__btn--click {
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid rgb(151, 151, 151);
+    outline: none;
+    transition: transform linear 0.2s;
+}
+
+.todos__list--item__btn--click:hover {
+    transform: scale(1.1);
+}
+
+.todos__list--item__btn--delete {
+    border: 1px solid red;
+    color: red;
+}
+
+.todos__list--item__btn--done {
+    color: violet;
+    border: 1px solid violet;
+}
+
+.todos__list--item__btn--edit {
+    color: rgb(0, 183, 255);
+    border: 1px solid rgb(0, 183, 255);
+}
+
+.seperate::after {
+    display: block;
+    content: '';
+    width: 60%;
+    position: relative;
+    left: 20%;
+    border-bottom: 1px solid #333;
+    margin: 30px 0;
+}
+
+
+/* TodosComplete */
+
+.todosComplete__title {
+    font-size: 2.6rem;
+}
+
+.todosComplete--no-item {
+    font-size: 1.8rem;
+    margin: 20px 0;
+}
+
+.todosComplete--no-item.hide {
+    display: none;
+}
+
+.todosComplete__list {
+    list-style-type: none;
+}
+
+.todosComplete__list--item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 24px;
+}
+
+.todosComplete__list--item__content {
+    font-size: 2rem;
+    color: rgb(141, 141, 141);
+    text-decoration: line-through;
+}
+
+.todosComplete__list--item__btn--click {
+    width: 40px;
+    height: 40px;
+    margin-left: 4px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid rgb(151, 151, 151);
+    outline: none;
+    transition: transform linear 0.2s;
+}
+
+.todosComplete__list--item__btn--click:hover {
+    transform: scale(1.1);
+}
+
+
+/* delete all */
+
+.form-delete {
+    /* display: inline-block; */
+    width: 140px;
+    height: 60px;
+    line-height: 60px;
+    background-color: var(--violet-color);
+    color: white;
+    margin: 24px;
+    border-radius: 6px;
+    transition: transform linear 0.2s;
+    display: none;
+}
+
+.form-delete:hover {
+    transform: scale(1.1);
+}
+
+.form-delete.show {
+    display: inline-block;
+}
+
+.delete--text {
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .form {
+        width: 60%;
+    }
+    .form-header {
+        font-size: 6.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form {
+        width: 70%;
+    }
+    .form-header {
+        font-size: 6.2rem;
+    }
+    .form--input {
+        height: 40px;
+    }
+    .todos__title {
+        font-size: 2rem;
+    }
+    .todos__list--item__content {
+        font-size: 1.6rem;
+    }
+    .todos__list--item__btn--click {
+        width: 34px;
+        height: 34px;
+    }
+    .todosComplete__title {
+        font-size: 2rem;
+    }
+    .todosComplete__list--item__content {
+        font-size: 1.6rem;
+    }
+    .todosComplete__list--item__btn--click {
+        width: 34px;
+        height: 34px;
+    }
+    .form-delete {
+        width: 100px;
+        height: 50px;
+        line-height: 50px;
+    }
+    .delete--text {
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .form {
+        width: 80%;
+    }
+    .form-header {
+        font-size: 5.6rem;
+    }
+}

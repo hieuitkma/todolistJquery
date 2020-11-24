@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <form class="form" action="">
+            <header class="form-header">To Do List</header>
+
+            <div class="form-group">
+                <input class="form--input" type="text" placeholder="Input here">
+                <button class="btn btn--add" id="btnAdd">Add Item</button>
+                <button class="btn btn--edit" id="btnEdit">Edit Item</button>
+            </div>
+
+            <div class="form-content">
+                <div class="todos">
+                    <span class="todos__title">NOT COMPLETED</span>
+                    <p class="todos--no-item">
+                        <i class="far fa-sticky-note"></i> Bạn chưa thêm công việc
+                    </p>
+                    <ul class="todos__list">
+                        <!-- <li class="todos__list--item">
+                            <p class="todos__list--item__content">${element}</p>
+                            <div class="todos__list--item__btn">
+                                <button class="todos__list--item__btn--click todos__list--item__btn--delete">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <button class="todos__list--item__btn--click todos__list--item__btn--done">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                                <button class="todos__list--item__btn--click todos__list--item__btn--edit">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="seperate"></div>
+
+                <div class="todosComplete">
+                    <span class="todosComplete__title">COMPLETED</span>
+                    <p class="todosComplete--no-item">
+                        <i class="far fa-sticky-note"></i> Bạn chưa hoàn thành công việc nào
+                    </p>
+                    <ul class="todosComplete__list">
+                        <!-- <li class="todosComplete__list--item">
+                            <p class="todosComplete__list--item__content">${element}</p>
+                            <div class="todos__list--item__btn">
+                                <button class="todos__list--item__btn--click todos__list--item__btn--delete">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                                <button class="todos__list--item__btn--click todos__list--item__btn--edit">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="form-delete">
+                <div class="delete--text">Delete All</div>
+            </div>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

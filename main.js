@@ -1,6 +1,5 @@
 let userInput = $('input[type="text"]');
 let btnAdd = $('#btnAdd');
-
 let todosCompleteList;
 let deleteTodoslist;
 let editTodosList;
@@ -12,6 +11,7 @@ function checkData() {
     localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
 }
 
+/** check data and show or hide */
 function showHideElement() {
     if (todos.length !== 0) {
         $('.todos--no-item').addClass('hide');
@@ -31,7 +31,6 @@ function showHideElement() {
         $('.form-delete').removeClass('show');
     }
 }
-
 
 function render() {
     checkData();
@@ -73,6 +72,7 @@ function render() {
     }).join('')
     $('.todosComplete__list').html(htmlTodosComplete);
 
+    /** Update the number of buttons*/
     todosCompleteList = $('.todos__list--item__btn--done');
     deleteTodoslist = $('.todos__list--item__btn--delete');
     editTodosList = $('.todos__list--item__btn--edit');
@@ -98,7 +98,6 @@ function addTodo() {
     });
 }
 
-showAddBtn();
 addTodo();
 
 function todosComplete() {
@@ -135,7 +134,7 @@ function editTodo() {
     Array.from(editTodosList).forEach((element, index) => {
         $(element).click(function(e) {
             e.preventDefault();
-            showAddBtn();
+            showEditBtn();
             if (index < todos.length) {
                 userInput.val(todos[index]);
             } else {
@@ -152,13 +151,13 @@ function editTodo() {
                 }
                 render();
             })
-
         });
     });
 }
 
-function showAddBtn() {
-    $('.btn--add').hide();
+/** show edit button and remove add button */
+function showEditBtn() {
+    $('.btn--add').remove();
     $('.btn--edit').show();
 }
 
@@ -168,6 +167,6 @@ function deleteAll() {
         localStorage.setItem('todos', JSON.stringify(todos));
         todosCompleted = []
         localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
-        render();
+        location.reload('true');
     })
 }

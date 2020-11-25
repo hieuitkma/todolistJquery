@@ -4,9 +4,12 @@ let todosCompleteList;
 let deleteTodoslist;
 let editTodosList;
 
-function checkData() {
+function getData() {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     todosCompleted = JSON.parse(localStorage.getItem('todosCompleted')) || [];
+}
+
+function setData() {
     localStorage.setItem('todos', JSON.stringify(todos));
     localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
 }
@@ -33,7 +36,8 @@ function showHideElement() {
 }
 
 function render() {
-    checkData();
+    getData();
+    setData();
     showHideElement();
     let htmlTodos = todos.map(element => {
         return `
@@ -88,10 +92,10 @@ function addTodo() {
     btnAdd.click(function(e) {
         e.preventDefault();
         if (userInput.val() === '') {
-            alert('Mày có nhập clg đâu mà thêm');
+            alert('Vui lòng nhập công việc !');
         } else {
             todos.push(userInput.val());
-            localStorage.setItem('todos', JSON.stringify(todos));
+            setData();
             userInput.val('');
             render();
         }
@@ -104,9 +108,8 @@ function todosComplete() {
     Array.from(todosCompleteList).forEach((element, index) => {
         $(element).click(function() {
             todosCompleted.push(todos[index]);
-            localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
             todos.splice(index, 1);
-            localStorage.setItem('todos', JSON.stringify(todos));
+            setData();
             render();
         })
     });
@@ -117,13 +120,13 @@ function deleteTodo() {
         $(element).click(function() {
             if (index < todos.length) {
                 todos.splice(index, 1);
-                localStorage.setItem('todos', JSON.stringify(todos));
+                setData();
             } else if (todos == 0 && todosCompleted !== 0) {
                 todosCompleted.splice(index, 1);
-                localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
+                setData();
             } else {
                 todosCompleted.splice(index - todos.length, 1);
-                localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
+                setData();
             }
             render();
         });
@@ -144,10 +147,10 @@ function editTodo() {
             $('.btn--edit').click(function() {
                 if (index < todos.length) {
                     todos.splice(index, 1, userInput.val());
-                    localStorage.setItem('todos', JSON.stringify(todos));
+                    setData();
                 } else {
                     todosCompleted.splice(index - todos.length, 1, userInput.val());
-                    localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
+                    setData();
                 }
                 render();
             })
@@ -164,9 +167,8 @@ function showEditBtn() {
 function deleteAll() {
     $('.form-delete').click(function() {
         todos = [];
-        localStorage.setItem('todos', JSON.stringify(todos));
         todosCompleted = []
-        localStorage.setItem('todosCompleted', JSON.stringify(todosCompleted));
+        setData();
         location.reload('true');
     })
 }

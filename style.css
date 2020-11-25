@@ -15,7 +15,7 @@ html {
 }
 
 .container {
-    background-color: #f1f1f1;
+    /* background-color: #f1f1f1; */
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -28,7 +28,7 @@ html {
     text-align: center;
     align-self: center;
     border-radius: 6px;
-    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+    /* box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1); */
 }
 
 .form-header {
@@ -290,5 +290,20 @@ html {
     }
     .form-header {
         font-size: 5.6rem;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .form {
+        width: 95%;
+    }
+    .form-group {
+        margin: 0;
+    }
+    .todos__list--item {
+        margin: 8px 0;
+    }
+    .todosComplete__list--item {
+        margin: 8px 0;
     }
 }

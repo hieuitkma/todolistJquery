@@ -29,9 +29,9 @@ function showHideElement() {
     }
 
     if (todos.length !== 0 || todosCompleted.length !== 0) {
-        $('.form-delete').addClass('show');
+        $('.form__delete').addClass('show');
     } else {
-        $('.form-delete').removeClass('show');
+        $('.form__delete').removeClass('show');
     }
 }
 
@@ -144,7 +144,7 @@ function editTodo() {
                 userInput.val(todosCompleted[index - todos.length]);
             }
 
-            $('.btn--edit').click(function() {
+            $('.btn__edit').click(function() {
                 if (index < todos.length) {
                     todos.splice(index, 1, userInput.val());
                     setData();
@@ -160,12 +160,12 @@ function editTodo() {
 
 /** show edit button and remove add button */
 function showEditBtn() {
-    $('.btn--add').remove();
-    $('.btn--edit').show();
+    $('.btn__add').remove();
+    $('.btn__edit').show();
 }
 
 function deleteAll() {
-    $('.form-delete').click(function() {
+    $('.form__delete').click(function() {
         todos = [];
         todosCompleted = []
         setData();

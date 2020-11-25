@@ -31,7 +31,7 @@ html {
     /* box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1); */
 }
 
-.form-header {
+.form__header {
     font-weight: 700;
     font-size: 7.6rem;
     color: var(--violet-color);
@@ -41,12 +41,12 @@ html {
 
 /* input and button */
 
-.form-group {
+.form__group {
     display: flex;
     margin: 0 20px;
 }
 
-.form--input {
+.form__input {
     height: 50px;
     width: 90%;
     font-size: 1.8rem;
@@ -57,11 +57,11 @@ html {
     outline: none;
 }
 
-.form--input:hover {
+.form__input:hover {
     border-color: var(--violet-color);
 }
 
-.form--input:focus {
+.form__input:focus {
     border-color: var(--violet-color);
     box-shadow: 0 2px 9px 2px rgba(199, 4, 173, 0.1);
 }
@@ -76,13 +76,13 @@ html {
     outline: none;
 }
 
-.btn--add {}
+.btn__add {}
 
-.btn--edit {
+.btn__edit {
     display: none;
 }
 
-.form-content {
+.form__content {
     margin: 30px 0;
 }
 
@@ -210,7 +210,7 @@ html {
 
 /* delete all */
 
-.form-delete {
+.form__delete {
     /* display: inline-block; */
     width: 140px;
     height: 60px;
@@ -223,11 +223,11 @@ html {
     display: none;
 }
 
-.form-delete:hover {
+.form__delete:hover {
     transform: scale(1.1);
 }
 
-.form-delete.show {
+.form__delete.show {
     display: inline-block;
 }
 
@@ -239,7 +239,7 @@ html {
     .form {
         width: 60%;
     }
-    .form-header {
+    .form__header {
         font-size: 6.8rem;
     }
 }
@@ -248,10 +248,10 @@ html {
     .form {
         width: 70%;
     }
-    .form-header {
+    .form__header {
         font-size: 6.2rem;
     }
-    .form--input {
+    .form__input {
         height: 40px;
     }
     .todos__title {
@@ -274,7 +274,7 @@ html {
         width: 34px;
         height: 34px;
     }
-    .form-delete {
+    .form__delete {
         width: 100px;
         height: 50px;
         line-height: 50px;
@@ -288,7 +288,7 @@ html {
     .form {
         width: 80%;
     }
-    .form-header {
+    .form__header {
         font-size: 5.6rem;
     }
 }
@@ -297,7 +297,7 @@ html {
     .form {
         width: 95%;
     }
-    .form-group {
+    .form__group {
         margin: 0;
     }
     .todos__list--item {

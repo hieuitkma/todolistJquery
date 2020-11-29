@@ -306,7 +306,19 @@ html {
     .todos__list--item {
         margin: 8px 0;
     }
+    .todos__list--item__content {
+        white-space: nowrap;
+        width: 220px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     .todosComplete__list--item {
         margin: 8px 0;
+    }
+    .todosComplete__list--item__content {
+        white-space: nowrap;
+        width: 250px;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }

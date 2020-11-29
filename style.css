@@ -117,6 +117,11 @@ html {
 
 .todos__list--item__content {
     font-size: 2.2rem;
+    white-space: nowrap;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
 }
 
 .todos__list--item__btn--click {
@@ -190,6 +195,11 @@ html {
     font-size: 2rem;
     color: rgb(141, 141, 141);
     text-decoration: line-through;
+    white-space: nowrap;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
 }
 
 .todosComplete__list--item__btn--click {
@@ -211,7 +221,6 @@ html {
 /* delete all */
 
 .form__delete {
-    /* display: inline-block; */
     width: 140px;
     height: 60px;
     line-height: 60px;
@@ -235,6 +244,15 @@ html {
     font-size: 2rem;
 }
 
+@media screen and (min-width: 1400px) {
+    .todos__list--item__content {
+        width: 70%;
+    }
+    .todosComplete__list--item__content {
+        width: 75%;
+    }
+}
+
 @media screen and (max-width: 1024px) {
     .form {
         width: 60%;
@@ -242,9 +260,15 @@ html {
     .form__header {
         font-size: 6.8rem;
     }
+    .todos__list--item__content {
+        width: 60%;
+    }
+    .todosComplete__list--item__content {
+        width: 65%;
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
     .form {
         width: 70%;
     }
@@ -291,9 +315,15 @@ html {
     .form__header {
         font-size: 5.6rem;
     }
+    .todos__list--item__content {
+        width: 55%;
+    }
+    .todosComplete__list--item__content {
+        width: 65%;
+    }
 }
 
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 415px) {
     .form {
         width: 95%;
     }
@@ -306,19 +336,7 @@ html {
     .todos__list--item {
         margin: 8px 0;
     }
-    .todos__list--item__content {
-        white-space: nowrap;
-        width: 220px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
     .todosComplete__list--item {
         margin: 8px 0;
-    }
-    .todosComplete__list--item__content {
-        white-space: nowrap;
-        width: 250px;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 }
